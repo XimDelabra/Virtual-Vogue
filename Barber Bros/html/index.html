@@ -1,0 +1,79 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarberBros - Confirmación de Cita</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: url("https://peluqueriacruz.com/wp-content/uploads/2024/02/joven-peluqueria-corte-pelo-1024x683.jpg");
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .header {
+            background: #0000004a;
+            backdrop-filter: blur(40px);
+            color: #ffc97c;
+            padding: 20px;
+            border-radius: 8px 8px 0 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .content {
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: left;
+            color: #ffffff;
+            padding: 20px;
+            background:rgba(0, 0, 0, 0.44);
+            backdrop-filter: blur(40px);
+            text-align: center;
+        }
+        .details {
+            text-align: left;
+            padding: 15px;
+            background:rgba(0, 0, 0, 0.44);
+            backdrop-filter: blur(40px);
+            border-radius: 5px;
+            margin-top: 10px;
+            color: #ffffff;
+            
+        }
+        .details li {
+            margin-bottom: 8px;
+        }
+        .footer {
+            margin-top: 0px;
+            font-size: 14px;
+            color: #ffffff;
+            backdrop-filter: blur(40px);
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">BarberBros - Confirmación de Cita</div>
+        <p class="content">Hola <strong>$nombre</strong>, gracias por reservar tu cita en BarberBros. A continuación, los detalles de tu reserva:</p>
+        <ul class="details">
+            <li><strong>Nombre:</strong> $nombre</li>
+            <li><strong>Teléfono:</strong> $telefono</li>
+            <li><strong>Fecha y Hora:</strong> $fecha_hora</li>
+            <li><strong>Servicio:</strong> $servicio</li>
+            <li><strong>Barbero asignado:</strong> $barbero</li>
+        </ul>
+        <p class="content">Recuerda que tu cita es única y no podrá ser reagendada en caso de inasistencia. Te esperamos puntual.</p>
+        <p class="footer">Gracias por confiar en BarberBros. ¡Nos vemos pronto!</p>
+    </div>
+</body>
+</html>
