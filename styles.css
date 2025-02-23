@@ -377,6 +377,8 @@ svg text {
     text-transform: capitalize;
     outline: none;
     margin-top: 15px;
+    text-decoration: none;
+    text-align: center;
 }
 
 .projects .card-btn:hover{
