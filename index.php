@@ -95,13 +95,11 @@
             </div>
         </div>
         <div class="card">
-            <img src="img/fondo-card.png" alt="" class="card-img">
+            <img src="img/coffee_break.png" alt="" class="card-img">
             <div class="card-body">
-                <h1 class="card-title">Titulo</h1>
-                <p class="card-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas reprehenderit
-                    asperiores cumque alias! Deleniti quaerat amet facere laudantium minus dolore repellat quae iste
-                </p>
-                <a href="" class="card-btn">button</a>
+                <h1 class="card-title">Coffee Break</h1>
+                <p class="card-info">Coffee Break un espacio único y vibrante donde el diseño <br> y los colores se mezclan para ofrecerte una experiencia<br>acogedora, perfecta para disfrutar de un buen café y <br> momentos de inspiración.</p>
+                <a href="Coffee Break/inicio.html" class="card-btn">Ver más</a>
             </div>
         </div>
         <div class="card">
