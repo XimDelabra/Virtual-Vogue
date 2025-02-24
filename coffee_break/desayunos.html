@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetería Deliciosa</title>
+    <link rel="stylesheet" href="">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #FAF3E0;
+            color: #333;
+            display: flex;
+            min-height: 100vh;
+            padding-top: 60px;
+            flex-direction: column;
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Contenido principal */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .navbar {
+            position: fixed; 
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #208f5a ;
+    padding: 10px 20px;
+    height: 60px;
+    color: rgb(0, 0, 0);
+    z-index: 1000;
+        }
+
+        .navbar-left .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .navbar-right a {
+            color: #ffeb5b;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.9em;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-right .donate-btn {
+            background-color: #ffeb5b;
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #ffffff;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-right a:hover {
+            color: #ffffff; 
+        }
+
+        .donate-btn:hover {
+            background-color: #000000; 
+        }
+
+        .search-bar input {
+            padding: 8px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            width: 200px;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            width: calc(33.33% - 20px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card img {
+            width: 50%;
+            height: 200px;
+            object-fit: cover;
+            display: flex;
+            margin-left: 110px;
+        }
+
+        .product-card .info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .product-card h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .product-card p {
+            font-size: 0.9em;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .product-card .price {
+            font-size: 1.2em;
+            color: #208f5a;
+            font-weight: bold;
+        }
+
+        footer {
+        background-color: #208f5a;
+        color: white;
+        padding: 40px 20px;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    .footer-left, .footer-center, .footer-right {
+        flex: 1;
+        min-width: 250px;
+    }
+
+    .footer-left h3 {
+        margin-bottom: 10px;
+        font-size: 1.6em;
+    }
+
+    .footer-left p {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+    }
+
+    .social-links a {
+        margin-right: 10px;
+        display: inline-block;
+    }
+
+    .social-links img {
+        width: 30px;
+        height: 30px;
+        transition: transform 0.3s ease;
+    }
+
+    .social-links a:hover img {
+        transform: scale(1.1);
+    }
+
+    .footer-center h4, .footer-right h4 {
+        font-size: 1.4em;
+        margin-bottom: 10px;
+    }
+
+    .footer-center ul, .footer-right ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .footer-center li, .footer-right li {
+        margin-bottom: 10px;
+        font-size: 1.1em;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        font-size: 1em;
+        border-top: 1px solid #ffffff;
+        padding-top: 10px;
+    }
+
+    button.add-to-cart {
+    background: linear-gradient(135deg, #ffee00, #ffa600);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+}
+
+button.add-to-cart:hover {
+    background: linear-gradient(135deg, #00642d, #00b862);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="main-content">
+        <nav class="navbar">
+            <div class="navbar-left">
+                <a href="#" class="logo">Coffee Break</a>
+            </div>
+            <div class="navbar-right">
+                <a href="menu.html">Regresar al menú</a>
+                <a href="index.html">Inicio</a>
+                <a href="carrito.php">Carrito</a>
+        
+            </div>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Buscar desayuno..." onkeyup="filterProducts()">
+            </div>
+        </nav>
+
+        <section class="products" id="productSection">
+            <div class="product-card" data-name="Chilaquiles">
+                <img src="image/chilaquiles.jpg" alt="Chilaquiles">
+                <div class="info">
+                    <h3>Chilaquiles</h3>
+                    <p>Chilaquiles rojos con huevo estrellado.</p>
+                    <p class="price">$4.00</p>
+                    <button class="add-to-cart" data-id="13" data-nombre="Chilaquiles" data-precio="4.00">Agregar al carrito</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-name="Panini">
+                <img src="image/panini.jpg" alt="Panini">
+                <div class="info">
+                    <h3>Panini</h3>
+                    <p>Panini basico recien preparado.</p>
+                    <p class="price">$3.50</p>
+                    <button class="add-to-cart" data-id="14" data-nombre="Panini" data-precio="3.50">Agregar al carrito</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-name="Omelette">
+                <img src="image/omelet.jpg" alt="Omelette">
+                <div class="info">
+                    <h3>Omelette</h3>
+                    <p>Rico omelette con espinacas.</p>
+                    <p class="price">$3.50</p>
+                    <button class="add-to-cart" data-id="15" data-nombre="Omelette" data-precio="3.50">Agregar al carrito</button>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <h3>Coffee Break</h3>
+                <p>Tu lugar para disfrutar del mejor café y postres en un ambiente acogedor.</p>
+                <div class="social-links">
+                    <a href="#" target="_blank"><img src="https://img.icons8.com/ios/50/000000/facebook.png" alt="Facebook"></a>
+                    <a href="#" target="_blank"><img src="https://img.icons8.com/ios/50/000000/instagram-new.png" alt="Instagram"></a>
+                    <a href="#" target="_blank"><img src="https://img.icons8.com/ios/50/000000/twitter.png" alt="Twitter"></a>
+                </div>
+            </div>
+            <div class="footer-center">
+                <h4>Contacto</h4>
+                <ul>
+                    <li>Teléfono: +1 (555) 123-4567</li>
+                    <li>Email: contacto@cafeteriadeliciosa.com</li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <h4>Horarios</h4>
+                <ul>
+                    <li>Lunes - Viernes: 8:00 AM - 8:00 PM</li>
+                    <li>Sábado - Domingo: 9:00 AM - 6:00 PM</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Coffee Break. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function filterProducts() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const productCards = document.querySelectorAll('.product-card');
+            
+            productCards.forEach(card => {
+                const productName = card.getAttribute('data-name').toLowerCase();
+                if (productName.includes(searchInput)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const buttons = document.querySelectorAll(".add-to-cart");
+    
+        buttons.forEach(button => {
+            button.addEventListener("click", function () {
+                console.log("Botón clickeado");
+                const id = this.getAttribute("data-id");
+                const nombre = this.getAttribute("data-nombre");
+                const precio = this.getAttribute("data-precio");
+    
+                const formData = new FormData();
+                formData.append("id", id);
+                formData.append("nombre", nombre);
+                formData.append("precio", precio);
+    
+                fetch("agregar_al_carrito.php", {
+                    method: "POST",
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === "success") {
+                        alert("✅ Producto agregado al carrito");
+                    } else {
+                        alert("❌ Error al agregar el producto");
+                    }
+                })
+                .catch(error => console.error("Error:", error));
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
