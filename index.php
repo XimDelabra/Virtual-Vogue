@@ -33,12 +33,10 @@
     </nav>
 
     <div class="cssportal-grid">
-        <div class="container-video">
+        <div class="div1">
             <video autoplay loop muted>
                 <source src="videos/video.mp4" type="video/mp4">
             </video>
-        </div>
-        <div class="div1">
             <div class="div1-logo">
                 <img id="logo" src="img/logo-3.png" alt="">
                 <svg>
@@ -48,23 +46,34 @@
                 </svg>
             </div>
         </div>
-        <div class="div2">
-            <div class="div2-text">
-                <h1>Sobre Nosotros</h1>
-                <p>
-                    En Virtual Vogue, reinventamos la experiencia de compra llevando el centro comercial directamente a
-                    ti. Somos una plataforma digital innovadora que reúne las mejores marcas, tiendas exclusivas y
-                    productos de calidad en un solo lugar, permitiéndote comprar de manera fácil, segura y cómoda.
-                </p>
-                <br>
-                <button>Explorar Tiendas</button>
-            </div>
-        </div>
-        <div class="div3"></div>
     </div>
+</div>
+<div class="container-bienvenida">
+    <div class="contenido-bienvenida">
+        <h1>Bienvenido a Virtual Vogue</h1>
+        <p>
+            Tu estilo, nuestra pasión. Descubre las mejores tiendas, productos y servicios en un solo lugar.
+            Encuentra todo lo que necesitas para ti y tu familia, desde ropa y accesorios hasta servicios.
+        </p>
+    </div>
+    <img src="https://images.pexels.com/photos/2375131/pexels-photo-2375131.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Moda" class="imagen">
+</div>
 
-
+    <div class="container-sobre-nosotros">
+        <div class="contenido">
+            <h1>Sobre Nosotros</h1>
+            <p>
+                En Virtual Vogue, reinventamos la experiencia de compra llevando el centro comercial directamente a
+                ti. Somos una plataforma digital innovadora que reúne las mejores marcas, tiendas exclusivas y
+                productos de calidad en un solo lugar, permitiéndote comprar de manera fácil, segura y cómoda.
+            </p>
+            <br>
+            <button>Explorar Tiendas</button>
+        </div>
+    </div>
+    <h1 class="title-tiendas">Nuestras tiendas</h1>
     <div class="projects">
+        
         <div class="card">
             <img src="img/Fondo_Guarderia.png" alt="Guarderia" class="card-img">
             <div class="card-body">
@@ -74,7 +83,7 @@
                     6 meses a 5 años, con actividades lúdicas, 
                     educativas y atención personalizada para su desarrollo integral.
                 </p>
-                <a href="" class="card-btn">button</a>
+                <a href="Guarderia/" class="card-btn">button</a>
             </div>
         </div>
         <div class="card">
@@ -100,7 +109,7 @@
             <div class="card-body">
                 <h1 class="card-title">Barber Bros</h1>
                 <p class="card-info">En Barber Bros no solo se trata de cortes de cabello, se trata de ofrecer una experiencia. </p>
-                <a href="" class="card-btn">button</a>
+                <a href="Barber Bros/login.php" class="card-btn">button</a>
             </div>
         </div>
         <div class="card">

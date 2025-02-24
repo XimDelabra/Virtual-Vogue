@@ -11,6 +11,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: "Montserrat", sans-serif;
+    background-color: #0f0f0f;
 }
 
 body::-webkit-scrollbar {
@@ -28,11 +29,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 .navbar {
-    width: 50%;
+    width: 100%;
     height: 100px;
     background-color: #ff000000;
     display: flex;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
     color: #fff;
     top: 0;
@@ -47,6 +48,9 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
     background: #000000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: right;
+    align-items: center;
 }
 
 .navbar.scrolled .div1-logo-nav {
@@ -109,102 +113,62 @@ body::-webkit-scrollbar-thumb {
 
 
 .cssportal-grid {
-	display: grid;
-	grid-template-rows: repeat(7, 1fr);
-	grid-template-columns: repeat(7, 1fr);
-	gap: 0;
 	width: 100%;
-	min-height: 830px;
-    background-color: #000000;
-}
-.div1 {
-	grid-area: 1 / 1 / 8 / 4;
-    background-image: radial-gradient(circle at center center, #191919, #646464), repeating-radial-gradient(circle at center center, #191919, #191919, 10px, transparent 20px, transparent 10px);
-    background-blend-mode: multiply;
-    background-color: #646464;
-    z-index: 1;
+	min-height: 850px;
     align-items: center;
     justify-content: center;
     display: flex;
-    text-align: center;
-    z-index: 2;
 }
-.div2 {
-	grid-area: 1 / 4 / 8 / 8;
-	background-color: rgba(8, 8, 8, 0.411);
-    z-index: 1;
+
+.div1 {
+    position: relative;
+    width: 100%;
+    min-height: 850px;
     align-items: center;
-    justify-content: left;
+    justify-content: center;
     display: flex;
     z-index: 2;
+    overflow: hidden;
 }
 
-.div3{
-    grid-area: 8 / 8 / 1 / 1;
-    background: #121212;
-    background: -webkit-linear-gradient(0deg, #121212 0%, rgba(255, 230, 204, 0) 50%, rgba(223, 186, 247, 0) 100%);
-    background: linear-gradient(0deg, #121212 0%, rgba(255, 230, 204, 0) 50%, rgba(223, 186, 247, 0) 100%);
-    z-index: 1;
-}
-
-.div2-text{
-    max-width: 50ch;
-    margin-left: 40px;
-    color: #fff;
-    
-}
-
-.div2-text h1{
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-weight: 200;
-}
-
-.div2-text h1{
-    font-weight: 100;
-}
-
-.div2-text button{
-    width: 40%;
-    height: 40px;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    font-size: 15px;
-    color: #fff;
-    background-color: #B93C3C;
-    transition: ease 0.4s;
-}
-.div2-text button:hover{
-    color: #ffffff;
-    background-color: #b93c3c;
-    transform: translatey(-10px);    
-}
-
-.container-video{
+.div1::before {
+    content: '';
+    position: absolute;
     width: 100%;
-    height: 830px;
-    position: absolute;
-}
-
-.container-video video {
-    position: absolute;
+    height: 100%;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 830px;
-    object-fit: cover;
+    z-index: -1;
     
 }
 
-#logo:hover{
-    scale: 1.1; 
+.div1 video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    mask-image: url(img/ink_lv2.gif);
+    mask-size: cover;
+    mask-position: center;
+    filter: brightness(66%);
+    -webkit-filter: brightness(66%);
+    -moz-filter: brightness(66%);
+}
+.div1-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 0, 0, 0);
 }
 
-.div1-logo img{
+#logo{
     width: 20%;
-    animation: animacion 0.9s ease;   
 }
+
 
 @keyframes animacion {
     0% {
@@ -226,7 +190,7 @@ body::-webkit-scrollbar-thumb {
 
 svg {
 	font-family: "Dancing Script", sans-serif;
-	width: 700px; height: 100%;
+	width: 500px; height: 100%;
 }
 svg text {
 	animation: stroke 5s forwards alternate;
@@ -248,13 +212,118 @@ svg text {
 	}
 }
 
-.cssportal-grid-2 {
-	display: grid;
-	grid-template-rows: repeat(6, 1fr);
-	grid-template-columns: repeat(7, 1fr);
-	gap: 0;
-	width: 100%;
-	height: 800px;
+
+.container-bienvenida {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: #0e0e0e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    height: 700px;
+    width: 100%;
+    padding: 50px 0 50px 0;
+}
+
+.contenido-bienvenida {
+    max-width: 500px;
+}
+
+.contenido-bienvenida h1 {
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.contenido-bienvenida p {
+    font-size: 18px;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+.imagen {
+    width: 450px;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .container-bienvenida {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .imagen {
+        max-width: 200px;
+    }
+}
+
+
+.container-sobre-nosotros {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    background-color: #00000022;
+}
+
+.container-sobre-nosotros::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url(https://images.pexels.com/photos/264502/pexels-photo-264502.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+
+    mask-image: url(img/Ink-Brush-PNG-Clipart-Background.png);
+    mask-size: cover;
+    mask-position: center;
+}
+
+.contenido {
+    background: rgba(255,255,255,0.2);
+    -webkit-backdrop-filter: blur(19px);
+    backdrop-filter: blur(19px);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 500px;
+}
+
+.contenido h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contenido p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.contenido button{
+    background-color: #b93c3c;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+    padding: 20px;
+    border-radius: 15px;
+    transition: ease 0.4s;
+    cursor: pointer;
+    border: none;
+}
+
+.contenido button:hover {
+    color: #ffffff;
+    background-color: #b93c3c;
+    transform: translateX(10px);
 }
 
 .footer {
@@ -299,6 +368,12 @@ svg text {
     margin-top: 20px;
     border-top: 1px solid #444;
     padding-top: 10px;
+}
+
+.title-tiendas{
+    color: #fff;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
 .projects{
@@ -347,7 +422,7 @@ svg text {
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
     z-index: 2;
-   
+
 }
 .projects .card:hover .card-body{
     opacity: 1;
