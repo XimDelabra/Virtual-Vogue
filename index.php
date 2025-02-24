@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virtual Vogue</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b1473ebfe8.js" crossorigin="anonymous"></script>
 </head>
 
@@ -49,17 +50,17 @@
     </div>
 </div>
 <div class="container-bienvenida">
-    <div class="contenido-bienvenida">
+    <div data-aos="zoom-out-up"  class="contenido-bienvenida">
         <h1>Bienvenido a Virtual Vogue</h1>
         <p>
             Tu estilo, nuestra pasión. Descubre las mejores tiendas, productos y servicios en un solo lugar.
             Encuentra todo lo que necesitas para ti y tu familia, desde ropa y accesorios hasta servicios.
         </p>
     </div>
-    <img src="https://images.pexels.com/photos/2375131/pexels-photo-2375131.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Moda" class="imagen">
+    <img data-aos="fade-down" src="https://images.pexels.com/photos/2375131/pexels-photo-2375131.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Moda" class="imagen">
 </div>
 
-    <div class="container-sobre-nosotros">
+    <div data-aos="fade-up" class="container-sobre-nosotros">
         <div class="contenido">
             <h1>Sobre Nosotros</h1>
             <p>
@@ -74,7 +75,7 @@
     <h1 class="title-tiendas">Nuestras tiendas</h1>
     <div class="projects">
         
-        <div class="card">
+        <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="card">
             <img src="img/Fondo_Guarderia.png" alt="Guarderia" class="card-img">
             <div class="card-body">
                 <h1 class="card-title">Little Angel</h1>
@@ -86,7 +87,7 @@
                 <a href="Guarderia/" class="card-btn">button</a>
             </div>
         </div>
-        <div class="card">
+        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" class="card">
             <img src="img/card_pasteleria.png" alt="Pasteleria" class="card-img">
             <div class="card-body">
                 <h1 class="card-title">Kamv</h1>
@@ -94,15 +95,15 @@
                 <a href="pasteleria_kamv/" class="card-btn">Visitar</a>
             </div>
         </div>
-        <div class="card">
-            <img src="img/coffee_break.png" alt="" class="card-img">
+        <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="card">
+            <img src="img/Coffee break.png" alt="" class="card-img">
             <div class="card-body">
                 <h1 class="card-title">Coffee Break</h1>
                 <p class="card-info">Coffee Break un espacio único y vibrante donde el diseño <br> y los colores se mezclan para ofrecerte una experiencia<br>acogedora, perfecta para disfrutar de un buen café y <br> momentos de inspiración.</p>
-                <a href="Coffee Break/inicio.html" class="card-btn">Ver más</a>
+                <a href="coffee_Break/inicio.html" class="card-btn">Ver más</a>
             </div>
         </div>
-        <div class="card">
+        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom"  class="card">
             <img src="img/findo-card-barber.png" alt="" class="card-img">
             <div class="card-body">
                 <h1 class="card-title">Barber Bros</h1>
@@ -110,7 +111,7 @@
                 <a href="Barber Bros/login.php" class="card-btn">button</a>
             </div>
         </div>
-        <div class="card">
+        <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="card">
             <img src="img/stylen-banner.png" alt="" class="card-img">
             <div class="card-body">
                 <h1 class="card-title">Stylen</h1>
@@ -162,8 +163,10 @@
     </footer>
 
 
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+     AOS.init();
+</script>
 </body>
-
 </html>
