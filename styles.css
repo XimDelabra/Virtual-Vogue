@@ -307,7 +307,7 @@ svg text {
     line-height: 1.5;
 }
 
-.contenido button{
+.contenido .button-explorar{
     background-color: #b93c3c;
     color: #fff;
     text-decoration: none;
@@ -318,9 +318,10 @@ svg text {
     transition: ease 0.4s;
     cursor: pointer;
     border: none;
+    padding: 18px 20px;
 }
 
-.contenido button:hover {
+.contenido .button-explorar:hover {
     color: #ffffff;
     background-color: #b93c3c;
     transform: translateX(10px);

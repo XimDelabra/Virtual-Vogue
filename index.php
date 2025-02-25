@@ -27,9 +27,9 @@
         </div>
         <div class="nav-links">
             <a href="#">Inicio</a>
-            <a href="#">Tiendas</a>
+            <a href="#projects">Tiendas</a>
             <a href="#">Eventos</a>
-            <a href="#">Contactos</a>
+            <a href="#contactos">Contactos</a>
         </div>
     </nav>
 
@@ -69,11 +69,11 @@
                 productos de calidad en un solo lugar, permitiéndote comprar de manera fácil, segura y cómoda.
             </p>
             <br>
-            <button>Explorar Tiendas</button>
+            <a href="#projects" class="button-explorar">Explorar Tiendas</a>
         </div>
     </div>
     <h1 class="title-tiendas">Nuestras tiendas</h1>
-    <div class="projects">
+    <div class="projects" id="projects">
         
         <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="card">
             <img src="img/Fondo_Guarderia.png" alt="Guarderia" class="card-img">
@@ -133,7 +133,7 @@
                 </div>
                 <p>Tu estilo, nuestra pasión. Visítanos y vive la experiencia.</p>
             </div>
-            <div class="footer-section">
+            <div class="footer-section" id="contactos">
                 <h3>Contacto</h3>
                 <p>📍 Dirección: Calle Principal #123, Ciudad</p>
                 <p>📞 Teléfono: +1 (555) 123-4567</p>
