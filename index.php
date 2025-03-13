@@ -11,27 +11,25 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="div1-logo-nav">
-            <img src="img/logo-3.png" alt="">
-            <div class="svg-nav">
-                <text x="50%" y="50%" dy=".35em" text-anchor="middle">
-                    Virtual Vogue
-                </text>
-            </div>
+<nav class="navbar">
+    <div class="div1-logo-nav">
+        <img src="img/logo-3.png" alt="Logo">
+        <div class="svg-nav">
+            <text x="50%" y="50%" dy=".35em" text-anchor="middle">Virtual Vogue</text>
         </div>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="nav-links">
-            <a href="#">Inicio</a>
-            <a href="#projects">Tiendas</a>
-            <a href="#">Eventos</a>
-            <a href="#contactos">Contactos</a>
-        </div>
-    </nav>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="nav-links">
+        <a href="#">Inicio</a>
+        <a href="#projects">Tiendas</a>
+        <a href="#">Eventos</a>
+        <a href="#contactos">Contactos</a>
+    </div>
+</nav>
 
     <div class="cssportal-grid">
         <div class="div1">

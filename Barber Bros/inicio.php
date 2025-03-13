@@ -13,14 +13,14 @@ session_start();
     <script src="https://kit.fontawesome.com/b1473ebfe8.js" crossorigin="anonymous"></script>
 </head>
 <body class="body-index">
-    <nav class="navbar">
-        <div class="logo"><img src="img/logo-3.png" alt=""></div>
+<nav class="navbar">
+        <div class="logo"><img src="img/logo-3.png" alt="Logo"></div>
         <div class="menu-toggle" onclick="toggleMenu()">
             <span></span>
             <span></span>
             <span></span>
         </div>
-        <div class="nav-links">
+        <div class="nav-links" id="navLinks">
             <a href="#home">Inicio</a>
             <a href="servicios.php">Services</a>
             <a href="citas.php">Citas</a>
@@ -31,6 +31,13 @@ session_start();
             <button>Search</button>
         </div>
     </nav>
+    
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    </script>
     <div class="sidebar" id="sidebar">
         <div class="img-perfil">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaCOobWuX1QLBAc-35uq5XO8Ozghn5Lej6yw&s" alt="">

@@ -9,12 +9,21 @@
     scrollbar-width: thin;
     scrollbar-color: #392e26 rgb(0, 0, 0);
 }
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
 
 .body-index {
     font-family: "Montserrat";
     background: rgb(63,51,42);
     background: radial-gradient(circle, rgba(63,51,42,1) 0%, rgba(0,0,0,1) 100%);
     background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 
@@ -122,6 +131,16 @@
 }
 
 @media (max-width: 768px) {
+    .body-index{
+        font-family: "Montserrat";
+        background: rgb(63,51,42);
+        background: radial-gradient(circle, rgba(63,51,42,1) 0%, rgba(0,0,0,1) 100%);
+        background-attachment: fixed;
+        margin: 0;
+        padding: 0;
+    }
+
+
     .navbar {
         flex-wrap: wrap;
         padding: 1rem;
@@ -150,109 +169,129 @@
     }
 }
 
-.container_principal{
+.container_principal {
     width: 100%;
     min-height: 100vh;
-    background-color: rgb(37, 37, 37);
-    overflow: hidden;
     display: flex;
+    flex-direction: column;
     position: relative;
+    overflow: hidden;
 }
 
-.container-video{
+/* Video de fondo */
+.container-video {
     width: 100%;
     height: 100vh;
-    position: absolute;
-}
-
-.container-video video {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
+    z-index: -1;
+}
+
+.container-video video {
+    width: 100%;
     height: 100vh;
     object-fit: cover;
-    
 }
-.container-video-title{
+
+/* Título sobre el video */
+.container-video-title {
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.447);
-    backdrop-filter: blur(2px);
+    display: flex;
     align-items: center;
     justify-content: center;
-    display: flex;
-    position: absolute;
-    color: #fff;
-    font-family: "Dancing Script";
-    font-size: 2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 20px;
 }
 
-.container-video-title img{
-    width: 20%;
-    animation: animacion-1 0.5s ease; 
+.container-video-title img {
+    width: 15%;
+    animation: fadeIn 0.5s ease;
 }
 
-@keyframes animacion-1 {
-    0% {
+@keyframes fadeIn {
+    from {
         transform: translateY(-100px);
-        border-radius: 25% 25% 25% 25% / 25% 25% 25% 25%;
         opacity: 0;
     }
-    100% {
+    to {
+        transform: translateY(0);
         opacity: 1;
-        transform: translateX(0);
     }
 }
 
-
-.container-informacion{
+/* Sección de información */
+.container-informacion {
     width: 100%;
-    height: 800px;
-    background-color: #00000000;
     display: flex;
-    margin-top: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 5%;
+    color: #fff;
 }
 
-.container-informacion-img{
-    width: 50%;
-    height: 100%;
-    background-color: rgba(255, 0, 0, 0);
+.container-informacion-img {
+    flex: 1 1 400px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .container-informacion-img img {
+    max-width: 90%;
     border: 2px solid #cfa181;
-    -webkit-box-shadow: -19px 19px 0 -6.5px #cfa181;
-    -moz-box-shadow: -19px 19px 0 -6.5px #cfa181;
-    box-shadow: -19px 19px 0 -6.5px #cfa181;
-
+    box-shadow: -15px 15px 0 -5px #cfa181;
+    border-radius: 10px;
 }
 
-.container-informacion-text{
-    width: 50%;
-    height: 100%;
-    background-color: rgba(21, 0, 255, 0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 100px 0 0;
-    color: #fff;
+.container-informacion-text {
+    flex: 1 1 400px;
+    padding: 20px;
+    text-align: center;
 }
 
-
-.container-informacion-text h1{
-    font-size: 2rem;
-    font-family: "Dancing Script";
+.container-informacion-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
 }
 
-.container-informacion-text li, strong ,p{
+.container-informacion-text p, 
+.container-informacion-text li, 
+.container-informacion-text strong {
     font-weight: 300;
+    font-size: 1.2rem;
 }
-.container-informacion-text strong{
+
+.container-informacion-text strong {
     font-weight: 500;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .container-video-title {
+        font-size: 2rem;
+        padding: 10px;
+    }
+
+    .container-informacion {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .container-informacion-text {
+        padding: 20px;
+    }
+
+    .container-video-title img {
+        width: 50%;
+        animation: fadeIn 0.5s ease;
+    }
+    
 }
 
 .container-equipo{
@@ -445,6 +484,24 @@
     -moz-box-shadow: 18px 18px 0 -6.5px #cfa181;
     box-shadow: 18px 18px 0 -6.5px #cfa181;
 }
+
+@media (max-width: 768px) {
+    .content-list-precio {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .price-list,
+    .list-precio-img {
+        width: 100%;
+    }
+
+    .list-precio-img img {
+        width: 100%;
+        height: auto;
+    }
+}
+
 
 .container-img-gallery{
     width: 100%;
@@ -681,6 +738,22 @@
     min-height: 500px;
     background-color: rgba(255, 254, 254, 0);
 }
+@media screen and (max-width: 768px) {
+    .container-formulario{
+        width: 100%;
+    }
+    .container-citas{
+        width: 100%;
+    }
+    .content-form-citas {
+        width: 90%;
+    }
+
+    .container-citas-img{
+        display: none;
+    }
+}
+
 
 .content-form-citas h1{
     font-family: Dancing Script;
@@ -1163,6 +1236,110 @@ option{
     background-color: rgba(255, 0, 0, 0);
     margin-top: 50px;
 }
+@keyframes animacion-formulario-login{
+    0%{ transform: translateX(200px); opacity: 0; }
+    100%{ opacity: 1; }
+}
+
+.content-form-login{
+    width: 80%;
+    background-color: transparent;
+}
+
+.content-form-login h1{
+    font-family: Dancing Script;
+    font-size: 50px;
+}
+
+.content-form-login a{
+    font-family: Dancing Script;
+    font-size: 20px;
+    text-decoration: none;
+    color:#fff;
+    margin-top: 23px;
+}
+
+.content-form-login strong{
+    background-color: transparent;
+    margin-top: 50px;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    .container-login {
+        flex-direction: column;
+        width: 90%;
+    }
+    .container-login-img,
+    .container-formulario-login {
+        width: 100%;
+        max-width: 100%;
+    }
+    .container-login-img img {
+        width: 60%;
+        display: none;
+    }
+    .content-form-login h1 {
+        font-size: 40px;
+    }
+    .content-form-login a {
+        font-size: 18px;
+    }
+    .container-registro-logo-img img{
+        width: 40%;
+        display: none;
+    }
+    
+    .container-registro {
+        height: 600px;
+        width: 90%;
+    }
+
+    
+    .container-formulario-registro {
+        width: 100%;
+        height: 100%;
+    }
+
+    .container-registro-img{
+        width: 60%;
+        display: none;
+    }
+
+    .content-form-registro h1 {
+        font-size: 30px;
+    }
+
+    .content-form-registro a {
+        font-size: 18px;
+    }
+    .container-informacion{
+        display: block;
+    }
+
+    .container-informacion-img{
+        width: 100%;
+        height: 100%;
+    }   
+    .container-informacion-text{
+        width: 100%;
+        height: 100%;
+        margin-top: 80px;
+        padding: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-form-login h1 {
+        font-size: 30px;
+    }
+    .content-form-login a {
+        font-size: 16px;
+    }
+    .container-login-logo-img img {
+        width: 50%;
+    }
+}
 
 
 .sidebar {
@@ -1175,7 +1352,7 @@ option{
     left: -350px;
     transition: left 0.3s ease;
     padding-top: 0px;
-    z-index: 100;;
+    z-index: 100;
 }
 .sidebar p {
     display: block;
@@ -1221,7 +1398,7 @@ option{
     font-size: 15px;
     position: absolute;
     left: 25%;
-    bottom: 30%;
+    bottom: 20%;
     display: flex;
     align-items: center;
     justify-content: center;
